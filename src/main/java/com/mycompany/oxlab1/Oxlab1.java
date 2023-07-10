@@ -20,6 +20,45 @@ public class Oxlab1 {
     public boolean end;
     public String turn;
     public String[][] board = {{"_", "_", "_"}, {"_", "_", "_"}, {"_", "_", "_"}};
+    
+     public boolean checkDraw() {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[i][j].equals("_")) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    
+    public void checkWin() {
+        if (checkRows() || checkColumns() || checkDiagonals()) {
+
+            System.out.println("+--------------------+");
+            System.out.println("|    !!! " + turn + " Wins !!!   |");
+            System.out.println("+--------------------+");
+            if (endGame()) {
+                reset();
+            } else {
+                play = false;
+
+            }
+        } if(play == true) {
+            if (checkDraw()) {
+                System.out.println("+--------------------+");
+                System.out.println("|    !!! Draw !!!    |");
+                System.out.println("+--------------------+");
+                if (endGame()) {
+                    reset();
+                } else {
+                    play = false;
+
+                }
+            }
+        }
+    }
 
     
 
