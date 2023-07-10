@@ -36,9 +36,16 @@ public class Oxlab1 {
 
     }
 
+    public void showTurn() {
+        System.out.println("_________________________");
+        System.out.println("<<< Turn >>> " + turn.toUpperCase());
+
+    }
 
     public void lean() {
         showBoard();
+        showTurn();
+        
 
     }
     
@@ -58,7 +65,5 @@ public class Oxlab1 {
     }
 
     
-    
-
-
+   
 }
