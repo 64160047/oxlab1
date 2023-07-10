@@ -31,6 +31,18 @@ public class Oxlab1 {
         }
         return true;
     }
+    
+    public boolean checkDiagonals() {
+        if (board[0][0].toLowerCase().equals(turn) && board[1][1].toLowerCase().equals(turn) && board[2][2].toLowerCase().equals(turn)) {
+            return true;
+        }
+
+        if (board[0][2].toLowerCase().equals(turn) && board[1][1].toLowerCase().equals(turn) && board[2][0].toLowerCase().equals(turn)) {
+            return true;
+        }
+
+        return false;
+    }
 
     public boolean checkColumns() {
         for (int j = 0; j < board[0].length; j++) {
