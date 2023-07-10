@@ -31,6 +31,15 @@ public class Oxlab1 {
         }
         return true;
     }
+     
+    public void nextTurn() {
+        if (turn.equals("x")) {
+            turn = "o";
+        } else {
+            turn = "x";
+        }
+
+    }
     
     
     public void checkWin() {
