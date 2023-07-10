@@ -21,6 +21,49 @@ public class Oxlab1 {
     public String turn;
     public String[][] board = {{"_", "_", "_"}, {"_", "_", "_"}, {"_", "_", "_"}};
     
+     public void inputRowAndCol() {
+        System.out.print("Input row : ");
+        row = kb.nextInt();
+        System.out.print("Input column : ");
+        col = kb.nextInt();
+        if (((row > 0 && row < 4) && (col > 0 && col < 4))) {
+
+            if (board[row - 1][col - 1].equals("_")) {
+
+                board[row - 1][col - 1] = turn.toUpperCase();
+                checkWin();
+                nextTurn();
+
+            } else {
+
+                while ((!(row > 0 && row < 4) && !(col > 0 && col < 4)) && !(board[row - 1][col - 1].equals("_"))) {
+
+                    System.out.println("Please Input Again.");
+                    System.out.print("Input row :");
+                    row = kb.nextInt();
+                    System.out.print("Input column :");
+                    col = kb.nextInt();
+
+                }
+
+                return;
+            }
+
+        } else {
+            return;
+        }
+    }
+     
+     public void nextTurn() {
+        if (turn.equals("x")) {
+            turn = "o";
+        } else {
+            turn = "x";
+        }
+
+    }
+
+    
      public boolean checkDraw() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
@@ -32,14 +75,7 @@ public class Oxlab1 {
         return true;
     }
      
-    public void nextTurn() {
-        if (turn.equals("x")) {
-            turn = "o";
-        } else {
-            turn = "x";
-        }
-
-    }
+    
     
     
     public void checkWin() {
