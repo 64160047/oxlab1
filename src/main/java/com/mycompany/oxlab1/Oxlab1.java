@@ -23,8 +23,26 @@ public class Oxlab1 {
 
     
 
+    public boolean checkRows() {
+        for (int j = 0; j < board[row - 1].length; j++) {
+            if (!board[row - 1][j].toLowerCase().equals(turn)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean checkColumns() {
+        for (int j = 0; j < board[0].length; j++) {
+            if (board[0][j].toLowerCase().equals(turn) && board[1][j].toLowerCase().equals(turn) && board[2][j].toLowerCase().equals(turn)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
  
-    public void showBoard() {
+     public void showBoard() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 System.out.print(board[i][j] + " ");
@@ -35,6 +53,7 @@ public class Oxlab1 {
         }
 
     }
+    
     
     public void reset() {
         for (int i = 0; i < board.length; i++) {
