@@ -44,6 +44,21 @@ public class Oxlab1 {
         }
         turn = "o";
     }
+    
+    public boolean endGame() {
+        String tor = kb.nextLine().toLowerCase();
+
+        while (!tor.equals("n") && !tor.equals("y")) {
+
+            System.out.print("| Do you want to Exit | (y/n) : ");
+            tor = kb.nextLine().toLowerCase();
+        }
+        if (tor.equals("y")) {
+            return false;
+        }
+        return true;
+
+    }
 
 
     public void showTurn() {
