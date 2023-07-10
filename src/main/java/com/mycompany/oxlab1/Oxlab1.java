@@ -21,6 +21,23 @@ public class Oxlab1 {
     public String turn;
     public String[][] board = {{"_", "_", "_"}, {"_", "_", "_"}, {"_", "_", "_"}};
     
+    
+    public void startGame() {
+        System.out.println("WELCOME OX GAME !!!");
+        System.out.print("Start Game ??? (y/n): ");
+        start = kb.nextLine().toLowerCase();
+        while (!start.equals("n") && !start.equals("y")) {
+            System.out.print("Start Game (y/n): ");
+            start = kb.nextLine().toLowerCase();
+        }
+        if (start.equals("n")) {
+            play = false;
+        } else {
+            play = true;
+        }
+
+    }
+    
      public void inputRowAndCol() {
         System.out.print("Input row : ");
         row = kb.nextInt();
